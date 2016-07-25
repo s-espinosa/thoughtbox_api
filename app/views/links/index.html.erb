@@ -1,0 +1,20 @@
+<%= form_for(@link, url: links_path(@link)) do |f| %>
+  <div class='link_form'>
+    <%= f.text_field :url, placeholder: "URL" %>
+    <%= f.text_field :title, placeholder: "Title" %>
+    <%= f.submit "Add Link" %>
+  </div>
+<% end %>
+
+<table>
+  <tr>
+    <th>Link</td>
+    <th>Read?</td>
+  </tr>
+  <% @links.each do |link|%>
+    <tr>
+      <td><a href="<%= link.url %>"><%= link.title %></a></td>
+      <td><%= link.read %></td>
+    </tr>
+  <% end %>
+</table>
