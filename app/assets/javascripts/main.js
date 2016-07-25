@@ -3,6 +3,7 @@ $( document ).ready(function() {
   addUnreadButtons();
   addSearch();
   addReadFilter();
+  addSort();
 })
 
 function addReadButtons() {
@@ -69,4 +70,19 @@ function addReadFilter() {
   $("#filter").on("click", "#show-all", function() {
     links.show();
   })
+}
+
+function addSort() {
+  var $links = $("tr.link");
+
+  $('#filter').on("click", "#sort-links", function(){
+    var sortedLinks = $links.sort(function(a,b){
+      return $(a).find(".title").text() > $(b).find(".title").text();
+    });
+
+    var headers = "<tr><th>Link</td><th>Read?</td><th>Mark Read</th><th>Mark Unread</th><th>Edit</th></tr>"
+
+    $("#link-table").html(sortedLinks);
+    $("#link-table").prepend(headers);
+  });
 }
