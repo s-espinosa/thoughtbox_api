@@ -14,9 +14,9 @@
     <th>Mark Unread</th>
   </tr>
   <% @links.each do |link|%>
-    <tr>
+    <tr class="<%= link.read %>" id="<%= link.id %>">
       <td><a href="<%= link.url %>"><%= link.title %></a></td>
-      <td id="<%= link.id %>"><%= link.read %></td>
+      <td><%= link.read %></td>
       <td class="read" id="read-<%= link.id %>">Mark as Read</td>
       <td class="unread" id="unread-<%= link.id %>" >Mark as Unread</td>
     </tr>
