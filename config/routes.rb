@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get '/', to: 'users#new'
+  get '/', to: 'homes#show'
 
+  resources :homes, only: [:show]
   resources :users, only: [:new, :create]
   resources :links, only: [:index]
   # The priority is based upon order of creation: first created -> highest priority.
