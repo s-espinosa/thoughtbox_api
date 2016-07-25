@@ -6,6 +6,14 @@
   </div>
 <% end %>
 
+<div id="filter">
+  <input type='text' name='search' id='search' placeholder='Search'>
+
+  <div id="show-read">Show Read</div>
+  <div id="show-unread">Show Unread</div>
+  <div id="show-all">Show All</div>
+</div>
+
 <table>
   <tr>
     <th>Link</td>
@@ -15,9 +23,9 @@
     <th>Edit</th>
   </tr>
   <% @links.each do |link|%>
-    <tr class="<%= link.read %>" id="<%= link.id %>">
-      <td><a href="<%= link.url %>"><%= link.title %></a></td>
-      <td><%= link.read %></td>
+    <tr class="<%= link.read %> link" id="<%= link.id %>">
+      <td class="title"><a href="<%= link.url %>"><%= link.title %></a></td>
+      <td class="read-status"><%= link.read %></td>
       <td class="read" id="read-<%= link.id %>">Mark as Read</td>
       <td class="unread" id="unread-<%= link.id %>" >Mark as Unread</td>
       <td><%= link_to "Edit", edit_link_path(link.id) %></td>

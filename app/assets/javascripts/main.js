@@ -1,6 +1,8 @@
 $( document ).ready(function() {
   addReadButtons();
   addUnreadButtons();
+  addSearch();
+  addReadFilter();
 })
 
 function addReadButtons() {
@@ -35,4 +37,36 @@ function changeStatus(linkNumber, params) {
     type: 'PATCH',
     data: params,
   });
+}
+
+function addSearch() {
+  $("#search").keyup(function(){
+    var links = $(".link");
+
+    var searchTerm = $.trim(this.value);
+    if (searchTerm === ""){
+      links.show();
+    } else {
+      links.hide();
+      links.has("td.title:contains(" + searchTerm + ")").show();
+    }
+  });
+}
+
+function addReadFilter() {
+  var links = $(".link");
+
+  $("#filter").on("click", "#show-read", function() {
+    links.hide();
+    links.has("td.read-status:contains('true')").show();
+  })
+
+  $("#filter").on("click", "#show-unread", function() {
+    links.hide();
+    links.has("td.read-status:contains('false')").show();
+  })
+
+  $("#filter").on("click", "#show-all", function() {
+    links.show();
+  })
 }
