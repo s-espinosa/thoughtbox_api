@@ -1,8 +1,5 @@
-<%= form_for(:session, url:login_pth) do |f| %>
-  <div class="login_form">
-    <%= f.text_field :email, placeholder: "Email" %>
-    <%= f.password_field :password, placeholder: "Password" %>
-    <%= f.password_field :confirmation, placeholder: "Password Confirmation" %>
-    <%= f.submit "Login" %>
-  </div>
+<%= form_for(:session, url: login_path) do |f| %>
+  <%= f.text_field :email, placeholder: "Email" %>
+  <%= f.password_field :password, placeholder: "Password" %>
+  <%= f.submit "Login" %>
 <% end %>
