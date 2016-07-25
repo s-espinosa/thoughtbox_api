@@ -1,7 +1,88 @@
+$base_red: #BB3333;
+
+body {
+  background-color: #222222;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+
+header {
+  height: 100px;
+  background-color: $base_red;
+  color: white;
+  text-align: center;
+  padding: 20px;
+
+  a {
+    color: white;
+  }
+}
+
+main {
+  width: 40%;
+  margin: 20px auto;
+  padding: 20px;
+  color: white;
+
+  a {
+    color: white;
+  }
+
+  .login {
+    background-color: $base_red;
+    border-radius: 10px;
+    width: 80px;
+    height: 50px;
+    color: white;
+    margin: 40px auto;
+    padding: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+#filter {
+  height: 80px;
+  margin: 10px;
+}
+
+#show-read, #show-unread, #show-all, #sort-links {
+  text-align: center;
+  padding: 10px 0;
+  background-color: $base_red;
+  display: inline-block;
+  float: left;
+  width: 24%;
+  height: 20px;
+  color: white;
+  margin: 10px 0;
+  border: solid white 1px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .true {
   background-color: green;
 }
 
 .false {
-  background-color: red;
+  background-color: $base_red;
+}
+
+.read, .unread {
+  background-color: #555555;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+td {
+  padding: 10px;
 }
