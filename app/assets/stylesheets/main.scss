@@ -7,9 +7,14 @@ body {
   font-family: sans-serif;
 }
 
+#flash_error {
+  background-color: orange;
+  border-radius: 10px;
+  padding: 10px;
+}
 
 header {
-  height: 100px;
+  height: 120px;
   background-color: $base_red;
   color: white;
   text-align: center;
