@@ -13,7 +13,7 @@
     <div id="show-read">Show Read</div>
     <div id="show-unread">Show Unread</div>
     <div id="show-all">Show All</div>
-    <div id="sort-links">Sort</div>    
+    <div id="sort-links">Sort</div>
   </div>
 </div>
 
@@ -28,10 +28,10 @@
   <% @links.each do |link|%>
     <tr class="<%= link.read %> link" id="<%= link.id %>">
       <td class="title"><a href="<%= link.url %>"><%= link.title %></a></td>
-      <td class="read-status"><%= link.read %></td>
+      <td class="read-status" id="status-<%= link.id %>"><%= link.read %></td>
       <td class="read" id="read-<%= link.id %>">Mark as Read</td>
       <td class="unread" id="unread-<%= link.id %>" >Mark as Unread</td>
-      <td><%= link_to "Edit", edit_link_path(link.id) %></td>
+      <td><%= link_to "Edit", edit_link_path(link.id), id: "edit-" + link.id.to_s %></td>
     </tr>
   <% end %>
 </table>

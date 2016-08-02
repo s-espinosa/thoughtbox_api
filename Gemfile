@@ -42,6 +42,8 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
 end
 
 group :development do

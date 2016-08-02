@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.feature "registered user can create links" do
   scenario "registered user creates new link" do
-    user = User.create(email: "admin@admin.com", password: "pass")
+    User.create(email: "admin@admin.com", password: "pass")
     visit login_path
     fill_in "Email", with: "admin@admin.com"
     fill_in "Password", with: "pass"
